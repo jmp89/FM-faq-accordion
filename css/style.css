@@ -28,13 +28,20 @@ Weights: 400, 600, 700
 }
 
 body {
+  width: 100dvw;
+  height: 100dvh;
   background-color: hsl(275, 100%, 97%);
   background-image: url(../assets/images/background-pattern-mobile.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position-y: -10px;
 }
-
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .main-container {
   background-color: hsl(0, 0%, 100%);
   margin: 30% auto 10px;
@@ -44,7 +51,7 @@ body {
   padding: 2rem 1.5rem;
   display: grid;
   grid-template-columns: 2.5rem 1fr 2.5rem;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr;
 }
 #star {
   grid-column: 1/2;
@@ -101,17 +108,56 @@ h2 {
   height: 1.7rem;
 }
 .attribution {
-  width: 85%;
-  position: relative;
-  bottom: 2px;
-  left: 15%;
+  width: fit-content;
 }
 
 .attribution p {
   font-size: 0.8rem;
+  text-align: center;
+  background-color: hsla(0, 0%, 100%, 0.445);
+  border-radius: 5px;
+  padding: 3px 10px;
 }
 
 .attribution a {
   font-weight: bold;
   font-size: 0.8rem;
+}
+
+@media (min-width: 920px) {
+  * {
+    font-size: 16px;
+  }
+
+  body {
+    background-image: url(../assets/images/background-pattern-desktop.svg);
+    background-position-y: 0px;
+  }
+
+  .main-container {
+    margin: 200px auto 1rem;
+    max-width: 550px;
+    min-height: 450px;
+    height: 70%;
+    gap: 1.2rem;
+    padding: 2rem 2rem;
+  }
+
+  .attribution {
+    max-width: 550px;
+    min-height: 450px;
+    height: 70%;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  h2 {
+    font-size: 18px;
+  }
+
+  #star img {
+    height: 2.4rem;
+  }
 }
