@@ -29,6 +29,7 @@ Weights: 400, 600, 700
 
 body {
   width: 100dvw;
+  height: 100dvh;
   background-color: hsl(275, 100%, 97%);
   background-image: url(../assets/images/background-pattern-mobile.svg);
   background-repeat: no-repeat;
@@ -43,14 +44,14 @@ main {
 }
 .main-container {
   background-color: hsl(0, 0%, 100%);
-  margin: 25px auto 10px;
+  margin: 30vw auto 10px;
   width: 85%;
   height: 50%;
   border-radius: 10px;
   padding: 2rem 1.5rem;
   display: grid;
   grid-template-columns: 2.5rem 1fr 2.5rem;
-  grid-template-rows: fit-content(100px) repeat(auto-fill, 1fr);
+  grid-template-rows: fit-content(100px) repeat(auto-fit, 1fr);
   box-shadow: 1px 1px 94px -11px hsla(292, 42%, 14%, 0.4);
 }
 #star {
@@ -75,6 +76,7 @@ h2 {
   font-weight: 600;
   color: hsl(292, 42%, 14%);
   margin: 1.4rem 0 1.4rem;
+  cursor: pointer;
 }
 
 .invisible {
@@ -103,6 +105,7 @@ h2 {
   grid-column: 3/4;
   margin-top: 1.4rem;
   justify-self: center;
+  cursor: pointer;
 }
 
 .buttonShowText img {
@@ -166,7 +169,7 @@ h2 {
   .main-container {
     width: 600px;
     min-height: 450px;
-    margin-top: 10.6rem;
+    margin: 10.6rem auto auto;
     padding: 35px 40px;
     gap: 0.6rem;
   }
@@ -197,6 +200,6 @@ h2 {
   }
 
   .buttonShowText img {
-    width: 100%;
+    width: 25px;
   }
 }

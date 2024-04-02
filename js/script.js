@@ -10,22 +10,26 @@ async function toggleVisibility(button, text) {
   }
 }
 
-const buttons = [
-  document.querySelector(".button1 img"),
-  document.querySelector(".button2 img"),
-  document.querySelector(".button3 img"),
-  document.querySelector(".button4 img"),
-];
+function handleHeadingClick(heading, button, text) {
+  heading.addEventListener("click", function () {
+    toggleVisibility(button.querySelector("img"), text);
+  });
+}
 
-const texts = [
-  document.querySelector(".question1 p"),
-  document.querySelector(".question2 p"),
-  document.querySelector(".question3 p"),
-  document.querySelector(".question4 p"),
-];
+const buttons = document.querySelectorAll(".button[data-target]");
+const texts = document.querySelectorAll(".question p.invisible");
+const headings = document.querySelectorAll("h2[data-target]");
 
 buttons.forEach((button, index) => {
   button.addEventListener("click", function () {
-    toggleVisibility(button, texts[index]);
+    const targetIndex = parseInt(button.dataset.target) - 1;
+    const text = document.querySelector(`.question${index + 1} p`);
+    toggleVisibility(button.querySelector("img"), text);
   });
+});
+
+headings.forEach((heading, index) => {
+  const button = document.querySelector(`.button[data-target="${index + 1}"]`);
+  const text = document.querySelector(`.question${index + 1} p`);
+  handleHeadingClick(heading, button, text);
 });
