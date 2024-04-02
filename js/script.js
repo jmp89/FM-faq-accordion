@@ -1,6 +1,6 @@
 "use strict";
 
-function toggleVisibility(button, text) {
+async function toggleVisibility(button, text) {
   if (button.src.endsWith("icon-plus.svg")) {
     button.src = "./assets/images/icon-minus.svg";
     text.classList.remove("invisible");
